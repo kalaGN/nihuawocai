@@ -1,0 +1,75 @@
+<view class="detail-container" wx:if="{{record}}">
+  <!-- 顶部 -->
+  <view class="header">
+    <view class="back-btn" bindtap="goBack">←</view>
+    <view class="title">游戏详情</view>
+    <view class="placeholder"></view>
+  </view>
+
+  <!-- 基本信息 -->
+  <view class="info-section">
+    <view class="info-row">
+      <view class="info-label">游戏时间</view>
+      <view class="info-value">{{record.formattedTime}}</view>
+    </view>
+    <view class="info-row">
+      <view class="info-label">难度等级</view>
+      <view class="info-value">{{educationLevelName[record.educationLevel]}}</view>
+    </view>
+    <view class="info-row">
+      <view class="info-label">正确率</view>
+      <view class="info-value success">{{record.accuracy}}%</view>
+    </view>
+    <view class="info-row">
+      <view class="info-label">总用时</view>
+      <view class="info-value">{{record.duration}}秒</view>
+    </view>
+  </view>
+
+  <!-- 成绩统计 -->
+  <view class="stats-section">
+    <view class="stat-card correct">
+      <view class="stat-icon">✅</view>
+      <view class="stat-number">{{record.correctCount}}</view>
+      <view class="stat-label">猜对</view>
+    </view>
+    <view class="stat-card skip">
+      <view class="stat-icon">⏭️</view>
+      <view class="stat-number">{{record.skipCount}}</view>
+      <view class="stat-label">跳过</view>
+    </view>
+    <view class="stat-card total">
+      <view class="stat-icon">📊</view>
+      <view class="stat-number">{{record.wordCount}}</view>
+      <view class="stat-label">总数</view>
+    </view>
+  </view>
+
+  <!-- 详细记录 -->
+  <view class="details-section" wx:if="{{record.details && record.details.length > 0}}">
+    <view class="section-title">📋 详细记录</view>
+    <scroll-view class="details-list" scroll-y>
+      <view 
+        class="detail-item" 
+        wx:for="{{record.details}}" 
+        wx:key="index"
+      >
+        <view class="detail-left">
+          <view class="detail-index">{{index + 1}}</view>
+        </view>
+        <view class="detail-center">
+          <view class="detail-word">{{item.word.content}}</view>
+          <view class="detail-category" wx:if="{{item.word.category}}">
+            {{item.word.category}}
+          </view>
+        </view>
+        <view class="detail-right">
+          <view class="detail-result {{item.result}}">
+            {{resultTypeLabel[item.result]}}
+          </view>
+          <view class="detail-time">{{item.time}}秒</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

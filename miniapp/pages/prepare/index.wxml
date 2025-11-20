@@ -1,0 +1,37 @@
+<view class="prepare-container">
+  <!-- 游戏配置信息 -->
+  <view class="config-info">
+    <view class="config-title">游戏配置</view>
+    <view class="config-items">
+      <view class="config-item">
+        <view class="config-label">难度</view>
+        <view class="config-value">{{educationLevelName[gameConfig.educationLevel]}}</view>
+      </view>
+      <view class="config-item">
+        <view class="config-label">时长</view>
+        <view class="config-value">{{gameConfig.displayDuration}}秒/词</view>
+      </view>
+      <view class="config-item">
+        <view class="config-label">数量</view>
+        <view class="config-value">{{gameConfig.wordCount}}个词</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 倒计时显示 -->
+  <view class="countdown-section">
+    <view class="countdown-text">游戏即将开始</view>
+    <view class="countdown-number">{{countdown}}</view>
+    <view class="countdown-tip">请做好准备！</view>
+  </view>
+
+  <!-- 游戏规则提示 -->
+  <view class="tips-section">
+    <view class="tip-item">👆 一人看手机比划</view>
+    <view class="tip-item">🤔 另一人背对手机猜词</view>
+    <view class="tip-item">✅ 猜对点击“✔️”，跳过点击“⏭️”</view>
+  </view>
+
+  <!-- 取消按钮 -->
+  <view class="cancel-btn" bindtap="cancelGame">取消游戏</view>
+</view>

@@ -1,0 +1,36 @@
+<!--pages/about/index.wxml-->
+<view class="container about-container">
+  <view class="header">
+    <view class="app-icon">🎯</view>
+    <view class="app-name">你比划我猜</view>
+    <view class="version">v{{version}}</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">核心功能</view>
+    <view class="features">
+      <view class="feature-item" wx:for="{{features}}" wx:key="title">
+        <text class="feature-icon">{{item.icon}}</text>
+        <view class="feature-info">
+          <text class="feature-title">{{item.title}}</text>
+          <text class="feature-desc">{{item.desc}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">使用说明</view>
+    <view class="card">
+      <text class="desc-text">1. 选择游戏模式和学段</text>
+      <text class="desc-text">2. 设置词汇展示时间</text>
+      <text class="desc-text">3. 比划者查看词汇进行表演</text>
+      <text class="desc-text">4. 猜测者根据比划输入答案</text>
+      <text class="desc-text">5. 游戏结束查看得分和明细</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <text class="copyright">仅供学习和参考使用</text>
+  </view>
+</view>

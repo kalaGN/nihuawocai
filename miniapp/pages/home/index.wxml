@@ -1,0 +1,56 @@
+<!--pages/home/index.wxml-->
+<view class="container home-container">
+  <!-- 顶部欢迎区域 -->
+  <view class="welcome-section">
+    <view class="app-title">你比划我猜</view>
+    <view class="app-subtitle">趣味互动 边玩边学</view>
+    
+    <!-- 用户信息 -->
+    <view class="user-info" wx:if="{{isAuthorized && userInfo}}">
+      <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+      <text class="nickname">{{userInfo.nickName}}</text>
+    </view>
+    
+    <view class="auth-tip" wx:if="{{!isAuthorized}}">
+      <text>未授权登录</text>
+      <text class="link" bindtap="goToAuth">去授权</text>
+    </view>
+  </view>
+
+  <!-- 快速开始 -->
+  <view class="action-section">
+    <button class="btn-start btn-primary" bindtap="startGame">
+      <text class="btn-text">开始游戏</text>
+    </button>
+  </view>
+
+  <!-- 最佳成绩展示 -->
+  <view class="best-scores-section" wx:if="{{bestScores}}">
+    <view class="section-title">最佳成绩</view>
+    <view class="scores-grid">
+      <view class="score-item" wx:for="{{['primary', 'junior', 'senior', 'university']}}" wx:key="index">
+        <view class="level-name">
+          {{item === 'primary' ? '小学' : item === 'junior' ? '初中' : item === 'senior' ? '高中' : '大学'}}
+        </view>
+        <view class="score-value" wx:if="{{bestScores[item]}}">
+          {{bestScores[item].score}}分
+        </view>
+        <view class="score-value text-muted" wx:else>
+          暂无记录
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷入口 -->
+  <view class="quick-actions">
+    <view class="quick-item" bindtap="viewHistory">
+      <text class="icon">📊</text>
+      <text class="label">历史记录</text>
+    </view>
+    <navigator url="/pages/about/index" class="quick-item">
+      <text class="icon">ℹ️</text>
+      <text class="label">关于</text>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,221 @@
+.game-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 加载中 */
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-text {
+  font-size: 32rpx;
+  color: #333;
+}
+
+/* 游戏主界面 */
+.game-playing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+/* 顶部信息栏 */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+}
+
+.progress-text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-timer {
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.pause-btn {
+  text-align: right;
+  font-size: 40rpx;
+}
+
+/* 词汇展示区域 */
+.word-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60rpx 40rpx;
+  background: #fff;
+  border-radius: 24rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.1);
+}
+
+.word-timer {
+  font-size: 48rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+
+.word-content {
+  font-size: 96rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 40rpx 0;
+  text-align: center;
+}
+
+.word-hint {
+  font-size: 32rpx;
+  color: #ff6b6b;
+  margin-top: 20rpx;
+}
+
+.word-category {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 20rpx;
+  padding: 8rpx 24rpx;
+  background: #f5f5f5;
+  border-radius: 16rpx;
+}
+
+/* 成绩统计 */
+.score-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 30rpx;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16rpx;
+  margin-bottom: 30rpx;
+}
+
+.score-item {
+  text-align: center;
+}
+
+.score-value {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.score-value.correct {
+  color: #2ecc71;
+}
+
+.score-value.skip {
+  color: #f39c12;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 160rpx;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+}
+
+.wrong-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.skip-btn {
+  background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+}
+
+.correct-btn {
+  background: linear-gradient(135deg, #48dbfb 0%, #0abde3 100%);
+}
+
+.btn-icon {
+  font-size: 60rpx;
+  margin-bottom: 8rpx;
+}
+
+.btn-text {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 退出按钮 */
+.quit-btn {
+  text-align: center;
+  font-size: 28rpx;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 20rpx;
+}
+
+/* 暂停遮罩 */
+.pause-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.pause-content {
+  text-align: center;
+}
+
+.pause-icon {
+  font-size: 120rpx;
+  margin-bottom: 40rpx;
+}
+
+.pause-text {
+  font-size: 40rpx;
+  color: #fff;
+  margin-bottom: 60rpx;
+}
+
+.resume-btn {
+  width: 400rpx;
+  height: 96rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 48rpx;
+  border: none;
+}

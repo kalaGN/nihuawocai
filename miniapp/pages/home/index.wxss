@@ -1,0 +1,136 @@
+/* pages/home/index.wxss */
+.home-container {
+  padding: 60rpx 40rpx;
+}
+
+/* 欢迎区域 */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.app-title {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #4A90E2;
+  margin-bottom: 16rpx;
+}
+
+.app-subtitle {
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 40rpx;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-bottom: 16rpx;
+}
+
+.nickname {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.auth-tip {
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.auth-tip .link {
+  color: #4A90E2;
+  margin-left: 16rpx;
+  text-decoration: underline;
+}
+
+/* 开始按钮 */
+.action-section {
+  margin-bottom: 80rpx;
+}
+
+.btn-start {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50rpx;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.3);
+}
+
+.btn-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* 最佳成绩 */
+.best-scores-section {
+  margin-bottom: 60rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 32rpx;
+}
+
+.scores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+
+.score-item {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.level-name {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 16rpx;
+}
+
+.score-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #4A90E2;
+}
+
+/* 快捷入口 */
+.quick-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40rpx;
+}
+
+.quick-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24rpx;
+}
+
+.quick-item .icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.quick-item .label {
+  font-size: 24rpx;
+  color: #666666;
+}

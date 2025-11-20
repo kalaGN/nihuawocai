@@ -1,0 +1,44 @@
+<view class="launch-container">
+  <!-- 顶部logo区域 -->
+  <view class="logo-section">
+    <view class="logo-icon">🎮</view>
+    <view class="app-name">{{appName}}</view>
+    <view class="app-desc">{{appDesc}}</view>
+  </view>
+
+  <!-- 功能介绍 -->
+  <view class="features">
+    <view class="feature-item">
+      <view class="feature-icon">👥</view>
+      <view class="feature-text">双人互动</view>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">📚</view>
+      <view class="feature-text">分学段词库</view>
+    </view>
+    <view class="feature-item">
+      <view class="feature-icon">🏆</view>
+      <view class="feature-text">成绩记录</view>
+    </view>
+  </view>
+
+  <!-- 授权按钮 -->
+  <view class="auth-section">
+    <button 
+      class="auth-btn" 
+      bindtap="getUserProfile"
+      disabled="{{isLoading}}"
+    >
+      <text wx:if="{{!isLoading}}">微信授权登录</text>
+      <text wx:else>登录中...</text>
+    </button>
+    
+    <view class="skip-btn" bindtap="skipLogin">
+      <text>暂不登录，先逛逛</text>
+    </view>
+    
+    <view class="tip-text">
+      登录后可保存游戏记录和最佳成绩
+    </view>
+  </view>
+</view>

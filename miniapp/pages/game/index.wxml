@@ -1,0 +1,87 @@
+<view class="game-container">
+  <!-- 加载中 -->
+  <view class="loading" wx:if="{{gameStatus === 'loading'}}">
+    <view class="loading-text">加载中...</view>
+  </view>
+
+  <!-- 游戏进行中 -->
+  <view class="game-playing" wx:if="{{gameStatus === 'playing' || gameStatus === 'paused'}}">
+    <!-- 顶部信息栏 -->
+    <view class="game-header">
+      <view class="header-left">
+        <view class="progress-text">{{currentIndex + 1}}/{{totalCount}}</view>
+      </view>
+      <view class="header-center">
+        <view class="total-timer">⏱️ {{timer}}秒</view>
+      </view>
+      <view class="header-right">
+        <view class="pause-btn" bindtap="togglePause">
+          {{gameStatus === 'playing' ? '⏸️' : '▶️'}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 词汇展示区域 -->
+    <view class="word-section">
+      <!-- 倒计时 -->
+      <view class="word-timer" style="color: {{displayTimer <= 3 ? '#ff4757' : '#333'}}">
+        {{displayTimer}}秒
+      </view>
+      
+      <!-- 词汇内容 -->
+      <view class="word-content">
+        {{currentWord.content}}
+      </view>
+      
+      <!-- 提示信息 -->
+      <view class="word-hint" wx:if="{{showHint}}">
+        💡 提示：{{hintText}}
+      </view>
+      
+      <!-- 词汇分类 -->
+      <view class="word-category" wx:if="{{currentWord.category}}">
+        {{currentWord.category}}
+      </view>
+    </view>
+
+    <!-- 成绩统计 -->
+    <view class="score-section">
+      <view class="score-item">
+        <view class="score-value correct">✔️ {{correctCount}}</view>
+      </view>
+      <view class="score-item">
+        <view class="score-value skip">⏭️ {{skipCount}}</view>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <view class="action-btn wrong-btn" bindtap="handleWrong">
+        <view class="btn-icon">❌</view>
+        <view class="btn-text">猜错</view>
+      </view>
+      
+      <view class="action-btn skip-btn" bindtap="handleSkip">
+        <view class="btn-icon">⏭️</view>
+        <view class="btn-text">跳过</view>
+      </view>
+      
+      <view class="action-btn correct-btn" bindtap="handleCorrect">
+        <view class="btn-icon">✔️</view>
+        <view class="btn-text">正确</view>
+      </view>
+    </view>
+
+    <!-- 退出按钮 -->
+    <view class="quit-btn" bindtap="quitGame">退出游戏</view>
+  </view>
+
+  <!-- 暂停遮罩 -->
+  <view class="pause-mask" wx:if="{{gameStatus === 'paused'}}">
+    <view class="pause-content">
+      <view class="pause-icon">⏸️</view>
+      <view class="pause-text">游戏已暂停</view>
+      <button class="resume-btn" bindtap="togglePause">继续游戏</button>
+    </view>
+  </view>
+</view>

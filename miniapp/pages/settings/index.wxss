@@ -1,0 +1,147 @@
+.settings-container {
+  min-height: 100vh;
+  background: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 顶部 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.back-btn {
+  font-size: 40rpx;
+  color: #333;
+  width: 80rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.placeholder {
+  width: 80rpx;
+}
+
+/* 内容区域 */
+.content {
+  flex: 1;
+  padding: 20rpx;
+}
+
+.section {
+  margin-bottom: 30rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+
+/* 学段选择 */
+.level-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+}
+
+.level-item {
+  padding: 24rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 12rpx;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.level-item.active {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea15, #764ba215);
+}
+
+.level-icon {
+  font-size: 48rpx;
+  margin-bottom: 12rpx;
+}
+
+.level-label {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.level-desc {
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* 时长和数量选择 */
+.option-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.option-item {
+  flex: 0 0 auto;
+  min-width: 120rpx;
+  padding: 20rpx 32rpx;
+  border: 2rpx solid #e0e0e0;
+  border-radius: 24rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  transition: all 0.3s;
+}
+
+.option-item.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* 游戏规则 */
+.game-rules {
+  background: #f8f9fa;
+  padding: 24rpx;
+  border-radius: 12rpx;
+}
+
+.rule-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 48rpx;
+}
+
+/* 底部按钮 */
+.footer {
+  padding: 20rpx 30rpx;
+  background: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.start-btn {
+  width: 100%;
+  height: 96rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 48rpx;
+  border: none;
+  box-shadow: 0 8rpx 24rpx rgba(102, 126, 234, 0.3);
+}

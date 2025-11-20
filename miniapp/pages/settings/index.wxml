@@ -1,0 +1,76 @@
+<view class="settings-container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <view class="back-btn" bindtap="goBack">←</view>
+    <view class="title">游戏设置</view>
+    <view class="placeholder"></view>
+  </view>
+
+  <scroll-view class="content" scroll-y>
+    <!-- 选择学段 -->
+    <view class="section">
+      <view class="section-title">🎯 选择学段难度</view>
+      <view class="level-list">
+        <view 
+          class="level-item {{selectedLevel === item.value ? 'active' : ''}}" 
+          wx:for="{{educationLevels}}" 
+          wx:key="value"
+          data-level="{{item.value}}"
+          bindtap="selectLevel"
+        >
+          <view class="level-icon">{{item.icon}}</view>
+          <view class="level-label">{{item.label}}</view>
+          <view class="level-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 选择时长 -->
+    <view class="section">
+      <view class="section-title">⏱️ 每个词展示时间</view>
+      <view class="option-list">
+        <view 
+          class="option-item {{selectedDuration === item ? 'active' : ''}}" 
+          wx:for="{{durations}}" 
+          wx:key="*this"
+          data-duration="{{item}}"
+          bindtap="selectDuration"
+        >
+          {{item}}秒
+        </view>
+      </view>
+    </view>
+
+    <!-- 选择词汇数量 -->
+    <view class="section">
+      <view class="section-title">📚 词汇数量</view>
+      <view class="option-list">
+        <view 
+          class="option-item {{selectedWordCount === item ? 'active' : ''}}" 
+          wx:for="{{wordCounts}}" 
+          wx:key="*this"
+          data-count="{{item}}"
+          bindtap="selectWordCount"
+        >
+          {{item}}个词
+        </view>
+      </view>
+    </view>
+
+    <!-- 游戏说明 -->
+    <view class="section">
+      <view class="section-title">💡 游戏规则</view>
+      <view class="game-rules">
+        <view class="rule-item">• 一人看屏幕比划，另一人猜词</view>
+        <view class="rule-item">• 猜对点击“✔️”，跳过点击“⏭️”</view>
+        <view class="rule-item">• 猜错两次显示字数提示</view>
+        <view class="rule-item">• 每个词有时间限制，超时自动跳过</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部按钮 -->
+  <view class="footer">
+    <button class="start-btn" bindtap="startGame">开始游戏</button>
+  </view>
+</view>

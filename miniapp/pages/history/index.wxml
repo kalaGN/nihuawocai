@@ -1,0 +1,57 @@
+<view class="history-container">
+  <!-- 最佳成绩区域 -->
+  <view class="best-scores-section" wx:if="{{bestScores}}">
+    <view class="section-title">🏆 最佳成绩</view>
+    <scroll-view class="best-scores-list" scroll-x>
+      <view class="best-score-item" wx:for="{{['primary', 'junior', 'senior', 'university']}}" wx:key="*this">
+        <view class="level-name">{{educationLevelName[item]}}</view>
+        <view class="score" wx:if="{{bestScores[item]}}">
+          {{bestScores[item].score}}个
+        </view>
+        <view class="no-score" wx:else>-</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 游戏记录列表 -->
+  <view class="records-section">
+    <view class="section-header">
+      <view class="section-title">📊 游戏记录</view>
+      <view class="clear-btn" bindtap="clearRecords" wx:if="{{records.length > 0}}">
+        清空
+      </view>
+    </view>
+
+    <!-- 记录列表 -->
+    <view class="records-list" wx:if="{{records.length > 0}}">
+      <view 
+        class="record-item" 
+        wx:for="{{records}}" 
+        wx:key="createdAt"
+        data-index="{{index}}"
+        bindtap="viewDetail"
+      >
+        <view class="record-left">
+          <view class="record-level">{{educationLevelName[item.educationLevel]}}</view>
+          <view class="record-time">{{item.formattedTime}}</view>
+        </view>
+        <view class="record-center">
+          <view class="record-score">
+            <text class="score-number">{{item.correctCount}}</text>/{{item.wordCount}}
+          </view>
+          <view class="record-accuracy">{{item.accuracy}}%</view>
+        </view>
+        <view class="record-right">
+          <view class="arrow">›</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:else>
+      <view class="empty-icon">📊</view>
+      <view class="empty-text">还没有游戏记录</view>
+      <view class="empty-tip">快去开始你的第一局游戏吧！</view>
+    </view>
+  </view>
+</view>

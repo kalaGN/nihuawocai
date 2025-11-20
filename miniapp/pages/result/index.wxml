@@ -1,0 +1,67 @@
+<view class="result-container">
+  <view class="result-content" wx:if="{{record}}">
+    <!-- 最佳成绩徽章 -->
+    <view class="best-badge" wx:if="{{isBestScore}}">
+      🏆 新纪录！
+    </view>
+
+    <!-- 成绩头部 -->
+    <view class="result-header">
+      <view class="result-title">游戏结束</view>
+      <view class="result-score">{{record.correctCount}}</view>
+      <view class="result-score-label">猜对个数</view>
+    </view>
+
+    <!-- 详细数据 -->
+    <view class="stats-section">
+      <view class="stat-item">
+        <view class="stat-label">难度</view>
+        <view class="stat-value">{{educationLevelName[record.educationLevel]}}</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">总数</view>
+        <view class="stat-value">{{record.wordCount}}个</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">跳过</view>
+        <view class="stat-value">{{record.skipCount}}个</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">用时</view>
+        <view class="stat-value">{{record.duration}}秒</view>
+      </view>
+      <view class="stat-item">
+        <view class="stat-label">正确率</view>
+        <view class="stat-value">{{record.accuracy}}%</view>
+      </view>
+    </view>
+
+    <!-- 最佳成绩对比 -->
+    <view class="best-score-section" wx:if="{{bestScore}}">
+      <view class="best-score-title">🏆 该难度最佳成绩</view>
+      <view class="best-score-value">{{bestScore.score}}个（准确率 {{bestScore.accuracy}}%）</view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-section">
+      <button class="action-btn primary-btn" bindtap="playAgain">
+        🔄 再来一局
+      </button>
+      <button class="action-btn secondary-btn" bindtap="viewHistory">
+        📊 查看记录
+      </button>
+      <button class="action-btn share-btn" open-type="share">
+        📤 分享成绩
+      </button>
+    </view>
+
+    <!-- 返回首页 -->
+    <view class="home-btn" bindtap="goHome">返回首页</view>
+  </view>
+
+  <!-- 没有数据 -->
+  <view class="no-data" wx:else>
+    <view class="no-data-text">暂无游戏结果</view>
+    <button class="action-btn primary-btn" bindtap="goHome">返回首页</button>
+  </view>
+</view>
