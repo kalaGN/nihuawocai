@@ -85,7 +85,7 @@ function getGameConfig() {
     gameMode: 'dual',
     educationLevel: 'primary',
     wordCount: 10,
-    displayDuration: 10,
+    displayDuration: 30,
     hintEnabled: false,
     lastUpdateTime: Date.now()
   })

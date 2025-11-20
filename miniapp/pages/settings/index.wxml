@@ -56,21 +56,18 @@
         </view>
       </view>
     </view>
-
-    <!-- 游戏说明 -->
-    <view class="section">
-      <view class="section-title">💡 游戏规则</view>
-      <view class="game-rules">
-        <view class="rule-item">• 一人看屏幕比划，另一人猜词</view>
-        <view class="rule-item">• 猜对点击“✔️”，跳过点击“⏭️”</view>
-        <view class="rule-item">• 猜错两次显示字数提示</view>
-        <view class="rule-item">• 每个词有时间限制，超时自动跳过</view>
-      </view>
-    </view>
   </scroll-view>
 
   <!-- 底部按钮 -->
   <view class="footer">
     <button class="start-btn" bindtap="startGame">开始游戏</button>
+    
+    <!-- 游戏规则 -->
+    <view class="game-rules">
+      <view class="rules-title">💡 游戏规则</view>
+      <view class="rule-item">• 一人看屏幕比划，另一人猜词</view>
+      <view class="rule-item">• 猜对点击“✔️”，跳过点击“⏭️”</view>
+      <view class="rule-item">• 每个词有时间限制，超时自动跳过</view>
+    </view>
   </view>
 </view>

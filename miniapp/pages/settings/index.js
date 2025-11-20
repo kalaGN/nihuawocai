@@ -13,11 +13,11 @@ Page({
     selectedLevel: 'primary',
     
     // 游戏时长（秒）
-    durations: [5, 8, 10, 15, 20],
-    selectedDuration: 10,
+    durations: [30, 60],
+    selectedDuration: 30,
     
     // 词汇数量
-    wordCounts: [10, 20, 30, 50],
+    wordCounts: [10, 20],
     selectedWordCount: 10
   },
 
@@ -32,7 +32,7 @@ Page({
     const config = storage.getGameConfig()
     this.setData({
       selectedLevel: config.educationLevel || 'primary',
-      selectedDuration: config.displayDuration || 10,
+      selectedDuration: config.displayDuration || 30,
       selectedWordCount: config.wordCount || 10
     })
   },

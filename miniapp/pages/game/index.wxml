@@ -56,11 +56,6 @@
 
     <!-- 操作按钮 -->
     <view class="action-buttons">
-      <view class="action-btn wrong-btn" bindtap="handleWrong">
-        <view class="btn-icon">❌</view>
-        <view class="btn-text">猜错</view>
-      </view>
-      
       <view class="action-btn skip-btn" bindtap="handleSkip">
         <view class="btn-icon">⏭️</view>
         <view class="btn-text">跳过</view>
